@@ -5,25 +5,29 @@ import PowerSettingsNewIcon from '@material-ui/icons/PowerSettingsNew'
 import React from 'react'
 import {makeStyles, withStyles} from "@material-ui/core";
 import SearchIcon from '@material-ui/icons/Search'
-const useStyles = makeStyles({
+
+
+
+const useStyles = makeStyles(theme => ({
     root: {
         backgroundColor: "#fff",
+        transform: 'translateZ(0)'
           },
     searchInput:
     {
         opacity: '0.6',
-        padding: '0px 8px',
+        padding: `0px ${theme.spacing(1)}px`,
         fontSize: '0.8rem',
         '&:hover': {
             backgroundColor: "#F2F2F2"
         },
         '& .MuiSvgIcon-root': 
         {
-            marginRight: '8px',
+            marginRight: theme.spacing(1),
         }
     },
    
-})
+}))
 
 export default function Header() {
     const classes = useStyles();
@@ -44,12 +48,6 @@ export default function Header() {
                         <IconButton>
                             <Badge badgeContent={4} color="secondary">
                                 <NotificationsNoneIcon fontSize="small" />
-                            </Badge>
-                        </IconButton>
-
-                        <IconButton>
-                            <Badge badgeContent={3} color="secondary">
-                                <NotificationsNoneIcon fontSize="small"/>
                             </Badge>
                         </IconButton>
 
